@@ -10,7 +10,10 @@
     <h1>testing</h1>
     <header>Hello World!</header>    
 </body>
-<body id="oldBodyElement"></body>
+<body id="oldBodyElement"> 
+    var string = document.lastModified;
+    alert(document.lastModified);    
+</body>
 alert(document.body.id); // "oldBodyElement"
 
 const aNewBodyElement = document.createElement("body");
@@ -18,7 +21,6 @@ const aNewBodyElement = document.createElement("body");
 aNewBodyElement.id = "newBodyElement";
 document.body = aNewBodyElement;
 alert(document.body.id); // "newBodyElement"
-var string = document.lastModified;
-alert(document.lastModified);
+
 
 </html>
