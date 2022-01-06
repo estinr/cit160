@@ -10,17 +10,16 @@
     <h1>testing</h1>
     <header>Hello World!</header>    
 </body>
-<body id="oldBodyElement"> 
+<body id="oldBodyElement">
+    alert(document.body.id); // "oldBodyElement"
+    const aNewBodyElement = document.createElement("body");
+    aNewBodyElement.id = "newBodyElement";
+    document.body = aNewBodyElement;
+    alert(document.body.id); // "newBodyElement"
     var string = document.lastModified;
     alert(document.lastModified);    
 </body>
-alert(document.body.id); // "oldBodyElement"
 
-const aNewBodyElement = document.createElement("body");
-
-aNewBodyElement.id = "newBodyElement";
-document.body = aNewBodyElement;
-alert(document.body.id); // "newBodyElement"
 
 
 </html>
