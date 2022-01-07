@@ -1,0 +1,19 @@
+
+body {
+    color: lightblue;
+    background: black;
+    text-indent: 10px;
+    text-size-adjust: auto;
+}
+
+footer {
+    position: fixed;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    bottom: 10px;
+    color: lightblue;
+    font-weight: bold;
+    font-size: 9pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
