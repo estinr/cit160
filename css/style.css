@@ -1,18 +1,20 @@
 body {
-    color: lightblue;
-    background: black;
+    color: aqua;
+    background: #181818;
     text-indent: 10px;
     text-size-adjust: auto;
 }
 
 footer {
+    text-align: left;
     position: fixed;
     padding-bottom: 4px;
     padding-left: 10px;
     bottom: 10px;
-    color: lightblue;
+    color: aqua;
     font-weight: bold;
     font-size: 9pt;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0 0 4px aqua;
     
 }
