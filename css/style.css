@@ -19,14 +19,15 @@ img{
     border-radius: 18px;
 }
 
-footer {
-    text-align: right;
+footer { 
     position: fixed;
-    bottom: 2px;
-    right: 20px;
+    text-align: center;
+    bottom: 1px;
+    margin: 1px;
+    padding: 1px;
+    width: 100%;
     color: aqua;
-    font-weight: bold;
     font-size: 9pt;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 0 0 4px aqua;
+    text-shadow: 0 0 8px black;
 }
