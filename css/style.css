@@ -1,4 +1,10 @@
+html {
+    align-content: center;
+    text-align: center;
+}
+
 body {
+    align-content: center;
     text-align: center;
     color: aqua;
     background: #181818;
@@ -8,11 +14,15 @@ body {
 }
 
 ul {
+    margin-left: 0px;
+    padding-left: 40px;
+    font-size: 14pt;
     list-style: inside;
-    text-align: center;
+    text-align: center; 
 }
 
 img{
+    align-content: center;
     margin: auto;
     width: 500px;
     height: auto;
