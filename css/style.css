@@ -1,20 +1,32 @@
 body {
+    text-align: center;
     color: aqua;
     background: #181818;
     text-indent: 10px;
     text-size-adjust: auto;
+    font-family: sans-serif;
+}
+
+ul {
+    list-style: inside;
+    text-align: center;
+}
+
+img{
+    margin: auto;
+    width: 500px;
+    height: auto;
+    border-radius: 18px;
 }
 
 footer {
-    text-align: left;
+    text-align: right;
     position: fixed;
-    padding-bottom: 4px;
-    padding-left: 10px;
-    bottom: 10px;
+    bottom: 2px;
+    right: 20px;
     color: aqua;
     font-weight: bold;
     font-size: 9pt;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-shadow: 0 0 4px aqua;
-    
 }
