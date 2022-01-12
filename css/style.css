@@ -1,7 +1,3 @@
-html {
-    align-content: center;
-    text-align: center;
-}
 
 body {
     align-content: center;
@@ -12,6 +8,7 @@ body {
     text-size-adjust: auto;
     font-family: sans-serif;
 }
+
 
 ul {
     margin-left: 0px;
@@ -24,7 +21,7 @@ ul {
 img{
     align-content: center;
     margin: auto;
-    width: 500px;
+    width: 700px;
     height: auto;
     border-radius: 18px;
 }
