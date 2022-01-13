@@ -53,6 +53,7 @@ input, output, button {
 .total {
 	border: 2px solid #888888;
 	border-spacing: 5px;
+	border-style: groove;
 	margin: .2rem;
 	padding: .4rem;
 	text-align: left;
