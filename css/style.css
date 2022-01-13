@@ -1,5 +1,5 @@
 
-body {
+body, title{
     align-content: center;
     text-align: center;
     color: aqua;
@@ -9,13 +9,13 @@ body {
     font-family: sans-serif;
 }
 
-
 ul {
+    display: inline-block;
     margin-left: 0px;
-    padding-left: 40px;
+    padding-left: 0;
     font-size: 14pt;
     list-style: inside;
-    text-align: center; 
+    text-align: left; 
 }
 
 img{
