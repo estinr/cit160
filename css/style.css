@@ -3,7 +3,7 @@ body, title{
     align-content: center;
     text-align: center;
     color: aqua;
-    background: #181818;
+    background: #111;
     text-indent: 10px;
     text-size-adjust: auto;
     font-family: sans-serif;
@@ -24,7 +24,17 @@ img{
     width: 700px;
     height: auto;
     border-radius: 18px;
+    border-style: ridge;
+    border-color: aqua;
+    box-shadow: 0 0 10px aqua;
 }
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+
 
 footer { 
     align-content: center;
@@ -37,5 +47,5 @@ footer {
     color: aqua;
     font-size: 9pt;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 0 0 8px black;
+    text-shadow: 0 0 8px aqua;
 }
