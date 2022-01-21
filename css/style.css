@@ -18,21 +18,20 @@ ul {
     text-align: left; 
 }
 
-img{
+img {
     align-content: center;
     margin: auto;
     width: 700px;
     height: auto;
-    border-radius: 18px;
-    border-style: ridge;
+    border-radius: 20px;
     border-color: aqua;
-    box-shadow: 0 0 10px aqua;
+    box-shadow: 0 0 12px aqua;
 }
-
+/* 
 .container {
     position: relative;
     text-align: center;
-}
+} */
 
 
 
