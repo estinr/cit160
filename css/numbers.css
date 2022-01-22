@@ -83,6 +83,7 @@ button {
 	border-bottom: 2px solid navy;
 }
 
-.output {
+.output,output {
 	margin: 1rem;
+	font-weight: bolder;
 }

@@ -13,7 +13,7 @@
             const totalAmountDue = 100;
 
             //INPUT
-            const discount = parseInt(document.querySelector('#discount').value);
+            const discount = parseFloat(document.querySelector('#discount').value);
 
             //PROCESSING
             total = totalAmountDue - discount;
@@ -39,7 +39,7 @@
             <label for="year">Model Year: </label>
             <input type="text" id="year" placeholder="2020" spellcheck="true">
             <label for="discount">Discount Amount: </label>
-            <input type="number" id="discount" placeholder="$5" toFixed(2)>
+            <input type="number" id="discount" placeholder="$5">
             <label for="amountdue">Total Amount Due:</label>
             <div class="total"><output type="text" id="total"></output></div>
             <div class="processing">

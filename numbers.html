@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,40 +18,85 @@
 <body>
 
 
-<main>
-    <h3>Line Items</h3>
-    <div class="tableform">
-        <span class="heading">Description</span>
-        <span class="heading">Quantity</span>
-        <span class="heading">Price</span>
-        <label><input type="text" id="desc1"></label>
-        <label><input type="text" id="q1" size="3"></label>
-        <label><input type="text" id="p1" size="5"></label>
-        <label><input type="text" id="desc2"></label>
-        <label><input type="text" id="q2" size="3"></label>
-        <label><input type="text" id="p2" size="5"></label>
-        <label><input type="text" id="desc3"></label>
-        <label><input type="text" id="q3" size="3"></label>
-        <label><input type="text" id="p3" size="5"></label>
-    </div>
+    <main>
+        <h3>Line Items</h3>
+        <div class="tableform">
+            <span class="heading">Description</span>
+            <span class="heading">Quantity</span>
+            <span class="heading">Price/Unt/$</span>
+            <label><input type="text" id="desc1" placeholder="Item"></label>
+            <label><input type="text" id="qty1" size="3" placeholder="#"></label>
+            <label><input type="text" id="prc1" size="5" placeholder="200"></label>
+            <label><input type="text" id="desc2" placeholder="Item"></label>
+            <label><input type="text" id="qty2" size="3" placeholder="#"></label>
+            <label><input type="text" id="prc2" size="5" placeholder="50"></label>
+            <label><input type="text" id="desc3" placeholder="Item"></label>
+            <label><input type="text" id="qty3" size="3" placeholder="#"></label>
+            <label><input type="text" id="prc3" size="5" placeholder="25"></label>
+        </div>
 
-    <h3>Discount</h3>
-    <label class="heading">Discount %: <input type="text" id="discount" placeholder=".10"></label>
-    
-    <h3>Tax</h3>
-    <label class="heading">Tax %: <input type="text" id="tax" placeholder=".075"></label>
+        <h3>Discount</h3>
+        <label class="heading">Discount %: <input type="text" id="discount" placeholder=".10"></label>
 
-    <div class="process"><button onclick="getTotal()">Submit Sales Slip</button>
-    </div>
-    
-    <p id="output"></p>
-</main>
+        <h3>Tax</h3>
+        <label class="heading">Tax %: <input type="text" id="tax" placeholder=".075"></label>
+
+        <div class="process"><button onclick="getTotal(),validateForm()">Submit Sales Slip</button>
+        </div>
+
+        <output id="output"></output>
+    </main>
 </body>
 
 <footer>
     &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
 </footer>
 
+<script>
+    document.querySelector('#copyright').textContent = new Date().getFullYear();
 
+    function getTotal() {
+        // DECLARATIONS 
+        let qty1 = 0;
+        let prc1 = 0;
+        let qty2 = 0;
+        let prc2 = 0;
+        let qty3 = 0;
+        let prc3 = 0;
+        let discount = 0;
+        let tax = 0;
+
+        // INPUT
+        qty1 = parseInt(document.querySelector('#qty1').value);
+        prc1 = parseFloat(document.querySelector('#prc1').value);
+        qty2 = parseInt(document.querySelector('#qty2').value);
+        prc2 = parseFloat(document.querySelector('#prc2').value);
+        qty3 = parseInt(document.querySelector('#qty3').value);
+        prc3 = parseFloat(document.querySelector('#prc3').value);
+        discount = parseFloat(document.querySelector('#discount').value);
+        tax = parseFloat(document.querySelector('#tax').value);
+
+        // PROCESSING
+        subTotal = qty1 * prc1 + qty2 * prc2 + qty3 * prc3;
+        discount = subTotal * discount;
+        discountTotal = subTotal - discount;
+        total = discountTotal * (1 + tax);
+
+
+        //OUTPUT
+        document.querySelector('#output').innerHTML = `Total:$${total.toFixed(2)}`;
+        // document.querySelector('#output').innerHTML = `${validateForm()}`;
+    }
+
+    // function validateForm() {
+    //     //DECLARATION
+    //     let x =  document.querySelector('#discount').value;
+    //     if (isNaN(x)) { //CHECKER
+    //         if (x = "") 
+    //         return 'Required Field';
+    //     }
+    //     return 'Not a number!';     
+    // }
+</script>
 
 </html>
