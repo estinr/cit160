@@ -33,10 +33,10 @@ img {
     width: 700px;
     height: auto;
     border-radius: 20px;
-    border-width: 1px;
-    border-color: aqua;
+    border-width: 2px;
+    border-color: white;
     border-style: solid;
-    box-shadow: 0 0 12px aqua;
+    box-shadow: 0 0 10px aqua;
 }
 
 /* 

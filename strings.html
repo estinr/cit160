@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cit160_strings - ereinsch</title>
+    <link rel="stylesheet" href="css/strings.css">
+</head>
+
+<body>
+    <header>
+        <h1>Scripture Story Build</h1>
+        <h2>Estin Reinsch</h2>
+    </header>
+
+    <main>
+        <h3>Inputs</h3>
+
+        <label class="heading">Provide a first name: <input type="text" id="fname" placeholder="Sarah"></label>
+        <label class="heading">Name a fruit: <input type="text" id="fruit" placeholder="apple"></label>
+        <label class="heading">Name an animal: <input type="text" id="anml1" placeholder="horse"></label>
+        <label class="heading">Name another animal: <input type="text" id="anml2" placeholder="lamb"></label>
+
+        <div class="process"><button onclick="story();wordCounter()">Build Story</button>
+        </div>
+        <p id="output"></p>
+
+        <p id="wrdCnt"></p>
+    </main>
+
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
+        function story() {
+            // INPUT
+            fname = document.querySelector('#fname').value;
+            fruit = document.querySelector('#fruit').value;
+            anml1 = document.querySelector('#anml1').value;
+            anml2 = document.querySelector('#anml2').value;
+
+            // PROCESSING
+            fstory = [`And it came to pass that the people of <strong>${fname}</strong> did till the land, and raise all manner of <strong>${fruit}</strong>, and flocks of herds, and flocks of all manner of <strong>${anml1}</strong> of every kind, and <strong>${anml2}</strong>.`];
+
+            //OUTPUT 
+            document.querySelector('#output').innerHTML = `${fstory}`;
+        }
+
+        function wordCounter() {
+            //INPUT
+            let words = `${fstory}`;
+            const splits = words.split(' ');
+            let removeChar = words.replace(/[^A-Za-z]\s+/g, " ");
+            let newWords = removeChar.trim().split(' ');
+            let tWord = splits.length;
+            
+            
+        //WORDCOUNT OUTPUT
+        document.getElementById('wrdCnt').innerHTML = `<hr>${tWord} words`;
+        }
+    </script>
+
+</body>
+
+</html>
