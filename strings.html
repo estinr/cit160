@@ -54,10 +54,8 @@
         function wordCounter() {
             //INPUT
             const words = `${fstory}`;
-            const splits = words.split(' ');
-            let removeChar = words.replace(/[^A-Za-z]\s+/g, " ");
-            let newWords = removeChar.trim().split(' ');
-            let tWord = splits.length;
+            const splits = words.split(' '); //PROCESSING
+            const tWord = splits.length;
             
             
             
