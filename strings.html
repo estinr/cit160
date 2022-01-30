@@ -23,11 +23,11 @@
         <label class="heading">Name an animal: <input type="text" id="anml1" placeholder="horse"></label>
         <label class="heading">Name another animal: <input type="text" id="anml2" placeholder="lamb"></label>
 
-        <div class="process"><button onclick="story();wordCounter()">Build Story</button>
+        <div class="process"><button onclick="story()">Build Story</button>
         </div>
         <p id="output"></p>
-
-        <p id="wrdCnt"></p>
+         
+        <!-- <p id="wrdCnt"></p> -->
     </main>
 
     <footer>
@@ -45,23 +45,23 @@
             anml2 = document.querySelector('#anml2').value;
 
             // PROCESSING
-            fstory = [`And it came to pass that the people of <strong>${fname}</strong> did till the land, and raise all manner of <strong>${fruit}</strong>, and flocks of herds, and flocks of all manner of <strong>${anml1}</strong> of every kind, and <strong>${anml2}</strong>.`];
+            const fstory = [`And it came to pass that the people of <strong>${fname}</strong> did till the land, and raise all manner of <strong>${fruit}</strong>, and flocks of herds, and flocks of all manner of <strong>${anml1}</strong> of every kind, and <strong>${anml2}</strong>.`];
 
             //OUTPUT 
             document.querySelector('#output').innerHTML = `${fstory}`;
         }
 
-        function wordCounter() {
-            //INPUT
-            const words = `${fstory}`;
-            const splits = words.split(' '); //PROCESSING
-            const tWord = splits.length;
+        // function wordCounter() {
+        //     //INPUT
+        //     const words = `${fstory}`;
+        //     const splits = words.split(' '); //PROCESSING
+        //     const tWord = splits.length;
             
             
             
-        //WORDCOUNT OUTPUT
-        document.getElementById('wrdCnt').innerHTML = `<hr>${tWord} words`;
-        }
+        // //WORDCOUNT OUTPUT
+        // document.getElementById('wrdCnt').innerHTML = `<hr>${tWord} words`;
+        // }
     </script>
 
 </body>

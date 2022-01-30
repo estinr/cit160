@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cit160 - lbs/kilo - ereinsch</title>
+    <link rel="stylesheet" href="css/poundsToKilos.css">
+</head>
+
+
+
+<body>
+    <div class="content">
+        <header>
+            <h1>lbs to kilos</h1>
+            <h2>Estin Reinsch</h2>
+        </header>
+        <div class="form">
+            <main>
+                <label for="lbs">Weight/lbs:</label>
+                <input type="number" id="lbs" placeholder="180">
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        // CURRENT YEAR IN FOOTER 
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
+        //INPUT
+        const weight = parseFloat(document.querySelector('#lbs').value);
+
+        //PROCESSING
+        kilos = weight * 2.2046;
+
+        //OUTPUT
+        document.querySelector('#output').innerHTML = `Kg: ${kilos.toFixed(2)}`;
+
+    </script>
+
+</body>
+
+</html>

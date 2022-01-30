@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Console Object</h1>
+<h2>The log() Method</h2>
+<p>Remember to open the console (Press F12) before you click "Run".</p>
+
+<p>How to display an object in the console.</p>
+
+<label for="firstname">First Name: <input type="text" name="firstname" id="firstname"></label>
+<label for="lastname">Last Name: <input type="text" name="lastname" id="lastname"></label>
+
+<button onclick="fname()">Click me</button>
+
+<p id="output"></p>
+
+<script>
+function fname() {
+    const firstname = document.getElementById('#firstname').value;
+    const lastname = document.getElementById('#lastname').value;
+    let myObj = {firstname:"John", lastname:"Doe"};
+
+    //OUTPUT
+    document.querySelector('#output').value = console.log(myObj);
+    
+}
+    
+</script>
+</body>
+
+</html>
