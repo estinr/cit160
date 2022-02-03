@@ -14,10 +14,13 @@
             let pounds = parseFloat(document.getElementById('lbs').value);
 
             //PROCESSING
-            let kilos = pounds / 2.2046;
+            let kilos = pounds / 2.2046; //CONVERSION
+            let round = Math.fround(kilos); //ROUDING
+            let float = round.toFixed(1); //FLOATER
+
 
             //OUTPUT
-            document.getElementById('output').innerHTML = `Kilos: ${kilos.toFixed(2)}`;
+            document.getElementById('output').innerHTML = `Kilos: ${float}`;
         }
     </script>
 </head>
