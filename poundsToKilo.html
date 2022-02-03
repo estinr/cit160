@@ -7,9 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cit160 - lbs/kilo - ereinsch</title>
     <link rel="stylesheet" href="css/poundsToKilos.css">
+    <script>
+        function lbs2kilo() {
+
+            //INPUT
+            let pounds = parseFloat(document.getElementById('lbs').value);
+
+            //PROCESSING
+            let kilos = pounds / 2.2046;
+
+            //OUTPUT
+            document.getElementById('output').innerHTML = `Kilos: ${kilos.toFixed(2)}`;
+        }
+    </script>
 </head>
 
 
+<!-- DISPLAY VIEWPORT -->
 
 <body>
     <header>
@@ -18,40 +32,28 @@
         <h2>Estin Reinsch</h2>
     </header>
     <main>
+        <!-- INPUT CONTAINER -->
         <div class="input">
             <!-- USER INPUT -->
             <label for="lbs">Weight: </label>
             <input type="number" id="lbs" placeholder="lbs">
             <button onclick="lbs2kilo()" id="button">Calculate</button>
-            
+
         </div>
     </main>
     <!-- DISPLAY OUTPUT -->
     <span id="output"></span>
+
     <!-- THE FOOTER -->
     <footer>
+
         &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
     </footer>
-
     <script>
-        document.getElementById('copyright').textContent = new Date().getFullYear();
-
-        function lbs2kilo() {
-
-            // CURRENT YEAR IN FOOTER 
-
-            //INPUT
-            const weight = parseFloat(document.getElementById('lbs').value);
-
-            //PROCESSING
-            let kilos = weight / 2.2046;
-
-            
-            //OUTPUT
-            document.getElementById('output').innerHTML = `Kilos: ${kilos.toFixed(2)}`;
-
-        }
+        // CURRENT YEAR IN FOOTER
+        document.getElementById('copyright').textContent = new Date().getFullYear(); 
     </script>
+
 
 </body>
 
