@@ -16,9 +16,6 @@ body {
     font-family: sans-serif;
 }
 
-p {
-    color: white;
-}
 
 #tron {
     max-width: inherit;
@@ -29,12 +26,31 @@ p {
 }
 
 main {
+    align-items: center;
+    text-align: center;
     max-width: inherit;
     display: inline-flex;
     margin: inherit;
     padding-top: 10px;
     position: relative;
     top: 100px;
+    left: 40px;
+}
+
+a {
+    color: cyan;
+}
+
+a:visted {
+    color: #555;
+}
+
+a:hover {
+    color: orangered;
+}
+
+a:active {
+    color: white;
 }
 
 ul {
@@ -51,11 +67,12 @@ ul {
 li {
     margin: 1rem;
     padding: 2px;
-    color: aqua;
+    color: white;
 }
 
 img {
-    /* align-items: center; */
+    align-items: center;
+    vertical-align: middle;
     position: relative;
     top: 100px;
     margin: 0;
