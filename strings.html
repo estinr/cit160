@@ -26,8 +26,8 @@
         <div class="process"><button onclick="story()">Build Story</button>
         </div>
         <p id="output"></p>
-         
-        <!-- <p id="wrdCnt"></p> -->
+        <span id="wrdCnt"></span>
+        <p id="wrdCnt"></p>
     </main>
 
     <footer>
@@ -49,6 +49,12 @@
 
             //OUTPUT 
             document.querySelector('#output').innerHTML = `${fstory}`;
+
+            const words = fstory;
+            const splits = words.split(' ');
+            const tWord = splits.length;
+
+            document.querySelector('#wrdCnt').innerHTML = `<hr>${tWord} words`;
         }
 
         // function wordCounter() {

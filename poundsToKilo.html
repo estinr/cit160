@@ -12,36 +12,44 @@
 
 
 <body>
-    <div class="content">
-        <header>
-            <h1>lbs to kilos</h1>
-            <h2>Estin Reinsch</h2>
-        </header>
-        <div class="form">
-            <main>
-                <label for="lbs">Weight/lbs:</label>
-                <input type="number" id="lbs" placeholder="180">
-            </main>
+    <header>
+        <h1>Lbs To Kilos</h1>
+        <hr>
+        <h2>Estin Reinsch</h2>
+    </header>
+    <main>
+        <div class="input">
+            <!-- USER INPUT -->
+            <label for="lbs">Weight: </label>
+            <input type="number" id="lbs" placeholder="lbs">
+            <button onclick="lbs2kilo()" id="button">Calculate</button>
+            
         </div>
-    </div>
-
+    </main>
+    <!-- DISPLAY OUTPUT -->
+    <span id="output"></span>
+    <!-- THE FOOTER -->
     <footer>
         &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
     </footer>
 
     <script>
-        // CURRENT YEAR IN FOOTER 
-        document.querySelector('#copyright').textContent = new Date().getFullYear();
+        document.getElementById('copyright').textContent = new Date().getFullYear();
 
-        //INPUT
-        const weight = parseFloat(document.querySelector('#lbs').value);
+        function lbs2kilo() {
 
-        //PROCESSING
-        kilos = weight * 2.2046;
+            // CURRENT YEAR IN FOOTER 
 
-        //OUTPUT
-        document.querySelector('#output').innerHTML = `Kg: ${kilos.toFixed(2)}`;
+            //INPUT
+            const weight = parseFloat(document.getElementById('lbs').value);
 
+            //PROCESSING
+            let kilos = weight / 2.2046;
+
+            //OUTPUT
+            document.getElementById('output').innerHTML = `Kilos: ${kilos.toFixed(2)}`;
+
+        }
     </script>
 
 </body>

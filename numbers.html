@@ -41,7 +41,7 @@
         <h3>Tax</h3>
         <label class="heading">Tax %: <input type="text" id="tax" placeholder=".075"></label>
 
-        <div class="process"><button onclick="getTotal(),validateForm()">Submit Sales Slip</button>
+        <div class="process"><button onclick="getTotal()">Submit Sales Slip</button>
         </div>
 
         <output id="output"></output>
@@ -57,7 +57,7 @@
 
     function getTotal() {
         // DECLARATIONS 
-        let qty1 = 0;
+        let qty1 = 100;
         let prc1 = 0;
         let qty2 = 0;
         let prc2 = 0;
@@ -84,7 +84,7 @@
 
 
         //OUTPUT
-        document.querySelector('#output').innerHTML = `Total:$${total.toFixed(2)}`;
+        document.querySelector('#output').innerHTML = `Total:$${qty1.toFixed(2)}`;
         // document.querySelector('#output').innerHTML = `${validateForm()}`;
     }
 

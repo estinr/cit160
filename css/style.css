@@ -2,28 +2,44 @@ html {
     background: #111;
     margin: 0;
     padding: 0;
+    align-content: center;
 }
 
 body {
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
     min-height: 100%;
-    align-content: center;
-    text-align: center;
-    color: white;
-    text-indent: 12px;
     text-size-adjust: auto;
     font-family: sans-serif;
 }
 
+p {
+    color: white;
+}
+
 #tron {
+    max-width: inherit;
     font-size: 1em;
     margin: 0;
-    text-shadow: 0 0 10px aqua;
-    -webkit-text-stroke: 1.3px aqua;
+    text-shadow: 0 0 16px aqua;
+    -webkit-text-stroke: .6px aqua;
+}
+
+main {
+    max-width: inherit;
+    display: inline-flex;
+    margin: inherit;
+    padding-top: 10px;
+    position: relative;
+    top: 100px;
 }
 
 ul {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     margin-left: 0;
     padding: 0;
@@ -35,13 +51,15 @@ ul {
 li {
     margin: 1rem;
     padding: 2px;
+    color: aqua;
 }
 
 img {
-    align-content: center;
-    vertical-align: middle;
-    margin: auto;
-    width: 700px;
+    /* align-items: center; */
+    position: relative;
+    top: 100px;
+    margin: 0;
+    max-width: 700px;
     height: auto;
     border-radius: 20px;
     border-width: 2px;
@@ -50,31 +68,28 @@ img {
     box-shadow: 0 0 10px aqua;
 }
 
+header, footer {
+    position: fixed;
+    max-width: inherit;
+    width: 100%;
+}
 
-/* .container {
-    position: relative;
+header {
+    top: 0;
+    max-width: inherit;
     text-align: center;
-} */
-
-
+    color: white;
+}
 
 footer {
-    align-content: center;
-    display: block;
-    position: absolute;
-    left: 0;
     bottom: 0;
-    margin: auto; 
-    padding: 1rem;
-    max-width: 100%;
+    max-width: inherit;
+    margin: inherit; 
+    padding: 0;
     color: orange;
     font-size: 14px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
     text-shadow: 0 0 12px orangered;
     -webkit-text-stroke: .3px red;
-}
-
-p.footer {
-    padding: .1rem;
-    margin: .1rem;
 }

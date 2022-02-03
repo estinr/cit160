@@ -1,46 +1,73 @@
 html {
-    background-color: slategrey;
+    background-color: #606060;
     margin: 0;
     padding: 0;
     height: 100%;
     box-sizing: border-box;
-
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
-    margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    min-height: 100%;
     align-items: center;
+    margin: auto;
+    max-width: 600px;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column
-}
-
-header {
-    background-color: royalblue;
-    padding: 1rem;
-    margin: .5rem auto;
-    border: 2px solid rgba(0, 0, 0, .1);
-    width: 400px;
-    font-weight: bolder;
-    box-shadow: 0 0 10px;
-}
-
-h1,h2 {
-	padding: 6px;
-	text-align: center;
-}
-.content {
-    padding: 3rem;
+    flex-direction: column;
 }
 
 
 main {
-    padding: .8rem;
-    margin: 16px auto;
-    box-shadow: 0 4px 8px;
-    display: flex;
-    background-color: rgb(135, 185, 243);
+    align-items: center;
+    position: fixed;
+    top: 215px;
+    min-width: 500px;
+    max-width: inherit;
+    padding: 1rem;
+    margin: 25px;
+    background-color: cadetblue;
+    box-shadow: 0 0 6px;
+    font-weight: bold;
+}
+
+header, footer {
+    position: fixed;
+    max-width: inherit;
+    padding: .5rem;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, .1);
+    font-weight: bolder;
+}
+
+header {
+    top: 0;
+    margin-top: 0;
+    max-width: inherit;
+    box-shadow: 0 0 10px;
+    background-color: royalblue;
+
+}
+
+footer {
+    bottom: 0px;
+    max-width: inherit;
+    background-color: #222;
+    text-align: center;
+    color: cyan;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+h1, h2 {
+	padding: 6px;
+	text-align: center;
+}
+
+hr {
+    margin: auto;
+    height: 2px;
+    background-color: cadetblue;
+    border: none;
 }
 
 ::placeholder {
@@ -48,19 +75,38 @@ main {
 }
 
 label {
-	display: block;
-	margin: 6px;
-	text-align: right;
+	display: flex;
+    flex-direction: column;
+	margin: 0;
+    padding: inherit;
 }
 
-footer {
-    position: absolute;
-    bottom: 0px;
-    background-color: #222;
+div.input {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 4px;
+}
+
+button {
+    background-color: #444;
+    color: white;
+    position: relative;
+    left: 10px;
+    padding: 6px;
+}
+
+.lbs {
+    padding: 6px;
+    margin: 6px;
+}
+
+#output {
+    max-width: inherit;
+    max-height: inherit;
+    position: relative;
+    top: 350px;
     text-align: center;
-    color: cyan;
-    font-weight: bold;
-    width: 100vw;
-    padding: 1rem;
-    /* margin-bottom: 10px; */
+    font-size: 5rem;
 }
