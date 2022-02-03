@@ -28,12 +28,11 @@ body {
 main {
     align-items: center;
     text-align: center;
-    max-width: inherit;
+    max-width: 500;
     margin: 0;
     padding-top: 10px;
     position: relative;
     top: 100px;
-    left: 40px;
 }
 
 a {
@@ -75,7 +74,7 @@ img {
     position: relative;
     top: 100px;
     margin: 0;
-    max-width: 600px;
+    width: 100%;
     height: auto;
     border-radius: 20px;
     border-width: 2px;
