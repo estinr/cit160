@@ -1,8 +1,15 @@
-// const words = `And it came to pass that the people of Sarah did till the land, and raise all manner of grain, and flocks of herds, and flocks of all manner of cattle of every kind, and flocks.`;
+let e = m * c ** 2;
+let s = (a + b + c) / 2;
+let r = 2 * k + (6 - n) / (3 * p ** 2);
+z = z + x - 3 * y;
+b = b * q - s;
 
-// const count = words.split(' ');
+//REVIEW SOLUTIONS
+let E = m * Math.pow(c, 2);
+//or the following or related variations are OK
 
-// const len = count;
-
-// console.log(len)
-
+var E = m * c * c /* or use (c ** 2) */;
+let s = (a + b + c) / 2;
+let r = 2 * k + (6 - n) / 3 * p * p;
+z = z + x - 3 * y;
+b = b * (q - s);
