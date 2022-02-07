@@ -11,18 +11,25 @@
 <body>
     <script>
         function vol() {
-            let height = 0;
-            let radius = 0;
 
             // input 
             let height = parseInt(document.getElementById('height').value);
-            let radius = parseInt(document.getElementById('radiud').value);
+            let radius = parseInt(document.getElementById('radius').value);
+
             // processing
-            
+            let volume = Math.PI * radius ** 2 * height;
+
             // output
-            document.getElementById('output').innerHTML = `${}`
+            document.getElementById('output').innerHTML = `${volume}`
         }
     </script>
+
+    <label for="height" id="height">Height: <input type="number"></label>
+    <label for="radius" id="radius">Radius: <input type="number"></label>
+    <button onclick="vol()">Calculate</button>
+    <hr>
+    <span id="output"></span>
+
 </body>
 
 </html>
