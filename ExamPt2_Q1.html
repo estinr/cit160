@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT160,EXAM1_Pt2.Q1-eriensch</title>
+</head>
+<script>
+    function netPay() {
+        // DECLARATONS
+        let payRate = 15;
+        let ot = 22.5;
+        let tax = 1.15;
+
+        // INPUT
+        let hours = parseInt(document.getElementById('hours').value);
+        let otHours = parseInt(document.getElementById('ot').value);
+
+        // PROCESSING
+        if (hours > 40) {
+            payRate = payRate * hours + ot * otHours + (1 + tax);
+        }
+        payRate = payRate + (1 + tax);
+
+
+        // OUTPUT
+        documnt.getElementById('output').innerHTML = `$${payRate}`;
+    }
+</script>
+
+<body>
+    <label for="hours" id="hours">Enter Regular Hours: <input type="number" id="hours" placeholder="40"></label><br>
+    <label for="ot" id="ot">Enter Overtime Hours: <input type="number" name="ot" id="ot" placeholder="2"></label>
+    <br><button onclick="netPay()">Calculate</button>
+    <span id="output"></span>
+</body>
+
+</html>
