@@ -7,25 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exam1Pt2_Q2-ereinsch</title>
 </head>
+<style>
+    html {
+        background-color: rgb(44, 44, 44);
+    }
+
+    body {
+        color: white;
+    }
+</style>
+<script>
+    function vol() {
+
+        // input 
+        let height = parseFloat(document.querySelector('#height').value);
+        let radius = parseFloat(document.querySelector('#radius').value);
+
+        // processing
+        let volume = Math.PI * Math.pow(radius, 2) * height;
+
+        // output
+        document.querySelector('#output').innerHTML = `Volume = ${volume.toFixed(2)}`;
+    }
+
+</script>
 
 <body>
-    <script>
-        function vol() {
 
-            // input 
-            let height = parseInt(document.getElementById('height').value);
-            let radius = parseInt(document.getElementById('radius').value);
 
-            // processing
-            let volume = Math.PI * radius ** 2 * height;
-
-            // output
-            document.getElementById('output').innerHTML = `${volume}`
-        }
-    </script>
-
-    <label for="height" id="height">Height: <input type="number"></label>
-    <label for="radius" id="radius">Radius: <input type="number"></label>
+    <label for="height">Height: <input type="number" id="height"></label>
+    <label for="radius">Radius: <input type="number" id="radius"></label>
     <button onclick="vol()">Calculate</button>
     <hr>
     <span id="output"></span>

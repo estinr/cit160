@@ -7,10 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIT160,EXAM1_Pt2.Q1-eriensch</title>
 </head>
+<style>
+    html {
+        background-color: rgb(44, 44, 44);
+    }
+
+    body {
+        color: white;
+    }
+
+</style>
 <body>
-    <label for="hours" id="hours">Enter Regular Hours: <input type="number" id="hours" placeholder="40"></label><br>
-    <label for="ot" id="ot">Enter Overtime Hours: <input type="number" name="ot" id="ot" placeholder="2"></label>
-    <br><button onclick="netPay()">Calculate</button><hr>
+    <label for="regHours">Enter Regular Hours: </label><input type="number" id="regHours" placeholder="40"><br>
+    <label for="otHours">Enter Overtime Hours: </label><input type="number" id="otHours" placeholder="2">
+    <br><button onclick="netPay()">Calculate</button>
+    <hr>
     <span id="output"></span>
 </body>
 
@@ -19,27 +30,23 @@
         // DECLARATONS
         const payRate = 15;
         const otRate = 22.5;
-        const tax = .15;
+        const taxRate = .15;
+        let grossPay = 0;
+        let taxAmount = 0;
+        let netPay = 0;
 
         // INPUT
-        let hours = parseInt(document.getElementById('hours').value);
-        let otHours = parseInt(document.getElementById('ot').value);
+        let regHours = parseInt(document.querySelector('#regHours').value);
+        let otHours = parseInt(document.querySelector('#otHours').value);
 
         // PROCESSING
-        
-            //
-            let grossPay = (payRate * hours) /* (otRate * otHours) */;
-            let netPay = grossPay - (grossPay * tax);
-        
-        // Reg Pay
-        // regPay = payRate + tax;
-    
+        grossPay = payRate * regHours + otRate * otHours;
+        taxAmount = taxRate * grossPay;
+        netPay = grossPay - taxAmount;
+
 
         // OUTPUT
-        document.getElementById('output').innerHTML = `$${netPay}`;
+        document.querySelector('#output').innerHTML = `$${netPay}`;
     }
 </script>
-
-
-
 </html>

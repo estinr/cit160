@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/weather.css">
+    <title>cit160:weather-ereinsch</title>
+</head>
+
+<!-- Body LMNT -->
+
+<body>
+    <!-- HEADER ELEMENT -->
+    <header>
+        <h1>Estin Reinsch</h1>
+        <hr>
+        <h2>Weather Selector</h2>
+    </header>
+    <!-- MAIN LMNT -->
+    <main id="weatherContainer">
+        <label for="weather">Select the weather type today: </label>
+        <select id="weather">
+            <option value="">--Make a choice--</option>
+            <option value="sunny">Sunny</option>
+            <option value="rainy">Rainy</option>
+            <option value="snowing">Snowing</option>
+            <option value="overcast">Overcast</option>
+        </select><br>
+        <hr>
+        <!-- OUTPUT DIV-->
+        <div></div>
+    </main>
+
+    <!-- THE FOOTER LMNT -->
+    <footer>
+        &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+    <script>
+        // CURRENT YEAR IN FOOTER
+        document.getElementById('copyright').textContent = new Date().getFullYear(); 
+    </script>
+</body>
+
+<!-- WEATHER SCRIPT RUN -->
+<script>
+    const select = document.querySelector('select');
+    const div = document.querySelector('div');
+
+    select.addEventListener('change', setWeather);
+
+    function setWeather() {
+        const choice = select.value;
+
+        switch (choice) {
+            case 'sunny':
+                div.textContent = 'It\'s sunny! Wear your shades.';
+                break;
+            case 'rainy':
+                div.textContent = `It\'s raining outside. Remember an umbrella!`;
+                break;
+            case 'snowing':
+                div.textContent = 'Ahh! It\'s snowing! Wear gloves and a down jacket';
+                break;
+            case 'overcast':
+                div.textContent = 'Overcast. Very pensive';
+                break;
+            default:
+                div.textContent = '';
+        }
+    }
+
+</script>
+
+</html>

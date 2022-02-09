@@ -2,6 +2,6 @@
     background-color: black;
 }
 
-body {
+body, span#output {
     color: aliceblue;
 }
