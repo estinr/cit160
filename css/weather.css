@@ -1,6 +1,6 @@
 html {
     background-color: #102e42;
-    color: whitesmoke;
+    color: white;
     padding: 0;
     margin: 0;
     font-family:'Courier New', Courier, monospace;
@@ -19,15 +19,16 @@ body {
 
 main {
     align-items: center;
-    position: fixed;
-    top: 215px;
+    border-radius: 12px;
+    box-shadow: 0 0 6px;
+    font-weight: bold;
     min-width: 500px;
     max-width: inherit;
     padding: 1rem;
     margin: 25px;
-    box-shadow: 0 0 6px;
-    border-radius: 12px;
-    font-weight: bold;
+    position: fixed;
+    text-align: center;
+    top: 215px;
 }
 
 

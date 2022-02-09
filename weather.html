@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- ESSENTIAL HEAD -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <title>cit160:weather-ereinsch</title>
 </head>
 
-<!-- Body LMNT -->
+<!-- Body ELEMENT -->
 
 <body>
     <!-- HEADER ELEMENT -->
@@ -18,22 +18,24 @@
         <hr>
         <h2>Weather Selector</h2>
     </header>
-    <!-- MAIN LMNT -->
-    <main id="weatherContainer">
+    <!-- MAIN ELEMENT -->
+    <main>
         <label for="weather">Select the weather type today: </label>
-        <select id="weather">
+        <select>
             <option value="">--Make a choice--</option>
-            <option value="sunny">Sunny</option>
-            <option value="rainy">Rainy</option>
-            <option value="snowing">Snowing</option>
-            <option value="overcast">Overcast</option>
+            <option value="hot">Hot</option>
+            <option value="rain">Rain</option>
+            <option value="snow">Snow</option>
+            <option value="unknown">Unknown</option>
         </select><br>
-        <hr>
+
         <!-- OUTPUT DIV-->
+        <p>Wear: </p>
+        <hr>
         <div></div>
     </main>
 
-    <!-- THE FOOTER LMNT -->
+    <!-- THE FOOTER ELEMENT -->
     <footer>
         &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
     </footer>
@@ -54,17 +56,17 @@
         const choice = select.value;
 
         switch (choice) {
-            case 'sunny':
-                div.textContent = 'It\'s sunny! Wear your shades.';
+            case 'hot':
+                div.textContent = 'Sandals ';
                 break;
-            case 'rainy':
-                div.textContent = `It\'s raining outside. Remember an umbrella!`;
+            case 'rain':
+                div.textContent = 'Galoshes';
                 break;
-            case 'snowing':
-                div.textContent = 'Ahh! It\'s snowing! Wear gloves and a down jacket';
+            case 'snow':
+                div.textContent = 'Boots';
                 break;
-            case 'overcast':
-                div.textContent = 'Overcast. Very pensive';
+            case 'unknown':
+                div.textContent = 'Shoes';
                 break;
             default:
                 div.textContent = '';
