@@ -7,39 +7,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIT160 - calc - ereinsch</title>
     <link rel="stylesheet" href="css/calculator.css">
-
+    <script defer src="js/year.js"></script>
 </head>
-<script>
-    const opChoice = document.querySelectorAll('button');
-    const form = document.querySelector('form')
 
-    form.addEventListener('click', 'form', calc);
 
-    function calc() {
-        const choice = button.value;
-
-        switch (key) {
-            case 'add':
-                form.add = ;
-                break;
-            case 'sub':
-                form.sub =  ;
-
-            default: 
-                break;
-        }
-
-    }
-</script>
 
 <body>
-    <form action="calc">
-        <button type="submit" id="add">Addition</button>
-        <button type="submit" id="sub">Subtraction</button><br>
-        <label for="addAdd" id="addAdd">Addition: </label><input type="number" name="add" id="usrAdd">
-        <label for="usrSub" id="usrSub">Subtraction: </label><input type="number" name="usrSub" id="usrSub">
-    </form>
+    <header>
+        <span>Estin Reinsch</span>
+    </header>
+    <h1>Calculator</h1>
+    <main class="form">
+        <span id="num1">1</span>
+        <select id="operand">
+            <option value="" selected disabled>--Select an Operand--</option>
+            <option value="+"> + </option>
+            <option value="-"> - </option>
+        </select>
+        <span id="num2">2</span>
+        <p>=</p>
+        <input type="text" id="answer">
+        <button onclick="calc()" id="check"> Check </button>
+    </main>
+    <hr color="white">
+    <p id="message"></p>
 
+    <!-- THE FOOTER ELEMENT -->
+    <footer>
+        <div>
+            &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
+        </div>
+    </footer>
 </body>
+
+
+<script>
+    const MAX = 11;
+    let num1 = Math.floor(Math.random() * MAX);
+    let num2 = Math.floor(Math.random() * MAX)
+    document.querySelector('#num1').textContent = ` ${num1} `;
+    document.querySelector('#num2').textContent = ` ${num2} `;
+
+
+    function calc() {
+        // INPUT
+        let operand = document.querySelector('#operand').value;
+        let userAnswer = parseInt(document.querySelector('#answer').value);
+
+        // processing
+        let answerKey = 0;
+        let message = '';
+
+        // set ansKey
+        if (operand === "+") {
+            answerKey = num1 + num2;
+        } else {
+            answerKey = num1 - num2;
+        }
+
+        // the message
+        if (answerKey === userAnswer) {
+            message = `Correct! :)`;
+        } else {
+            message = `Incorrect :(`;
+        }
+
+        // output
+        document.querySelector('#message').textContent = message;
+    }
+</script>
 
 </html>
