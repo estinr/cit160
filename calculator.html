@@ -7,16 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIT160 - calc - ereinsch</title>
     <link rel="stylesheet" href="css/calculator.css">
-    <script>
-        function calc() {
 
-        }
-    </script>
 </head>
+<script>
+    const opChoice = document.querySelectorAll('button');
+    const form = document.querySelector('form')
+
+    form.addEventListener('click', 'form', calc);
+
+    function calc() {
+        const choice = button.value;
+
+        switch (key) {
+            case 'add':
+                form.add = ;
+                break;
+            case 'sub':
+                form.sub =  ;
+
+            default: 
+                break;
+        }
+
+    }
+</script>
 
 <body>
     <form action="calc">
-        <label for="rando"><input type="text" id="rando"></label>
+        <button type="submit" id="add">Addition</button>
+        <button type="submit" id="sub">Subtraction</button>
     </form>
 
 </body>
