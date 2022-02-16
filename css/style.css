@@ -32,10 +32,10 @@ main {
     margin: 0;
     padding-top: 10px;
     position: relative;
-    top: 100px;
+    top: 200px;
 }
 
-a {
+/* a {
     color: cyan;
 }
 
@@ -52,9 +52,9 @@ a:active {
 }
 
 ul {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
     margin: auto;
     max-width: inherit;
     padding: inherit;
@@ -67,7 +67,7 @@ li {
     padding: 2px;
     width: 160px;
     color: white;
-}
+} */
 
 /* img {
     align-items: center;
@@ -108,4 +108,12 @@ footer {
     text-align: center;
     text-shadow: 0 0 12px orangered;
     -webkit-text-stroke: .3px red;
+}
+
+select {
+    text-align: center;
+}
+
+label {
+    color: white;
 }

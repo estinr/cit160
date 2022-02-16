@@ -9,26 +9,22 @@ html {
 
 body {
     align-items: center;
-    margin: auto;
-    max-width: 600px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    margin: 0 auto;
+    max-width: inherit;
 }
 
 
 main {
-    align-items: center;
     border-radius: 12px;
     box-shadow: 0 0 6px;
     font-weight: bold;
-    min-width: 500px;
     max-width: inherit;
     padding: 1rem;
     margin: 25px;
     position: fixed;
     text-align: center;
     top: 215px;
+    left: 390px;
 }
 
 
@@ -46,11 +42,10 @@ header {
     top: 0;
     margin-top: 0;
     max-width: inherit;
-
 }
 
 footer {
-    bottom: 0px;
+    bottom: 0;
     max-width: inherit;
     text-align: center;
     color: cyan;

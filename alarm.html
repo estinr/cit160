@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT160_Alarm_ereinsch</title>
+    <link rel="stylesheet" href="css/alarm.css">
+    <script defer src="js/year.js"></script> <!-- year script -->
+</head>
+
+<script>
+    function checkAlarm() {
+        const now = new Date();
+        let message = "";
+
+        // INPUT
+        const theMonth = now.getMonth();
+        const theDate = now.getDate();
+        const theDay = now.getDay();
+        
+        // PROCESSING
+        if (theDay === 5 || theDay === 6 || (theMonth === 0 && theDate === 1) || (theMonth === 3 && theDate === 4) || (theMonth === 11 && theDate === 25)) {
+            message = "Sleep In!";
+        } else {
+            message = "Get Up!";
+        }
+
+
+        // OUTPUT
+        document.querySelector('#output').textContent = message;
+    }
+
+</script>
+
+<body>
+    <header>
+        <h1>Estin Reinsch</h1>
+        <hr>
+        <h2>Alarm Clock</h2>
+    </header>
+    <main>
+        <button onclick="checkAlarm()">Click Me</button>
+        <span id="output"></span>
+    </main>
+
+    <footer>
+        <div>
+            &copy;<span id="copyright"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
+        </div>
+    </footer>
+
+</body>
+
+
+</html>
