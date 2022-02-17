@@ -1,0 +1,30 @@
+html {
+    background-color: hsl(147, 50%, 30%);
+    color: #FFF;
+    margin: 6px;
+    padding: 6px;
+    max-width: 400px;
+    text-shadow: 1px 1px 3px #111;
+}
+
+body {
+    max-width: inherit;
+}
+
+.main {
+    max-width: inherit;
+    margin: inherit;
+    padding: inherit;
+}
+
+.header hr {
+    margin: 10px;
+    height: 2px;
+    background-color: black;
+    border: none;
+}
+
+.header,
+.footer {
+    max-width: inherit;
+}

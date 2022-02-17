@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cit160-discount-ereinsch</title>
+    <link rel="stylesheet" href="css/discount.css">
+    <script defer src="js/year.js"></script> <!-- year script -->
+</head>
+
+<script>
+    // const input = document.getElementById('input');
+    // input.addEventListener("keypress", (event.keyCode === 13));
+
+    function condDiscount() {
+        const now = new Date();
+        const discount = .1 * 100;
+        const tax = .06 * 100;
+        let total = 0;
+
+
+        // INPUT
+        const theDay = now.getDay();
+        let subTot = parseFloat(document.getElementById('subTot').value);
+
+        // PROCESSING        
+        if (subTot > 50 || theDay === 2 || theDay === 3 || (theDay === 1) || (theDay === 4)) {
+            total = subTot - discount + tax;
+        } else {
+            total = subTot + tax;
+        }
+
+
+        // OUTPUT
+        document.getElementById('output').textContent = `$${total}`;
+    }
+</script>
+
+<body>
+    <div class="header"></div>
+    <header>
+        <h1>Estin Reinsch</h1>
+        <hr>
+        <h2>Sales Discount</h2>
+    </header>
+
+    <div class="main">
+        <main>
+            <div class="input">
+                <label for="subTot">Enter SubTotal: <input type="number" id="subTot" autofocus></label><br>
+                
+            </div>
+            <div class="submit">
+                <button onclick="condDiscount()">Calc</button> <span id="output"></span>
+            </div>
+
+        </main>
+    </div>
+
+
+    <div class="footer">
+        <footer>
+            &copy;<span id="year"></span> &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+    </div>
+
+</body>
+
+
+
+</html>
