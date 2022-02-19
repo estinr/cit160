@@ -28,3 +28,7 @@ body {
 .footer {
     max-width: inherit;
 }
+
+span#output {
+    color: hotpink;
+}

@@ -16,25 +16,30 @@
 
     function condDiscount() {
         const now = new Date();
-        const discount = .1 * 100;
-        const tax = .06 * 100;
+        const taxRate = .06;
+        const discRate = .1;
         let total = 0;
 
 
         // INPUT
         const theDay = now.getDay();
-        let subTot = parseFloat(document.getElementById('subTot').value);
+        let subTotal = parseFloat(document.getElementById('subTotal').value);
 
-        // PROCESSING        
-        if (subTot > 50 || theDay === 2 || theDay === 3 || (theDay === 1) || (theDay === 4)) {
-            total = subTot - discount + tax;
-        } else {
-            total = subTot + tax;
-        }
+        // PROCESSING
+        let taxTotal = subTotal * taxRate;
+        let discount = subTotal * discRate;
 
+
+
+        if ((theDay === 2 || theDay === 3) && subTotal > 50) {
+            total = subTotal * discount + taxTotal;
+        } total = subTotal + taxTotal;
+        
+        
+        let float = total.toFixed(2);
 
         // OUTPUT
-        document.getElementById('output').textContent = `$${total}`;
+        document.getElementById('output').textContent = `Total: $${float}`;
     }
 </script>
 
@@ -49,8 +54,8 @@
     <div class="main">
         <main>
             <div class="input">
-                <label for="subTot">Enter SubTotal: <input type="number" id="subTot" autofocus></label><br>
-                
+                <label for="subTotal">Enter SubTotal: <input type="number" id="subTotal" autofocus></label><br>
+
             </div>
             <div class="submit">
                 <button onclick="condDiscount()">Calc</button> <span id="output"></span>
