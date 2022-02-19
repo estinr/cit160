@@ -20,15 +20,21 @@ body {
 .header hr {
     margin: 10px;
     height: 2px;
-    background-color: black;
+    background-color: #111;
     border: none;
 }
 
 .header,
 .footer {
     max-width: inherit;
+    text-align: center;
 }
 
 span#output {
     color: hotpink;
+}
+
+.submit {
+    margin: 10px;
+    padding: 10px;
 }

@@ -19,6 +19,7 @@
         const taxRate = .06;
         const discRate = .1;
         let total = 0;
+        let discountTotal = 0;
 
 
         // INPUT
@@ -28,14 +29,17 @@
         // PROCESSING
         let taxTotal = subTotal * taxRate;
         let discount = subTotal * discRate;
+        let netTotal = subTotal - discount;
+        let netTaxTot = netTotal * taxRate;
 
 
+        if ((subTotal > 50) && (theDay === 2 || theDay === 6)) {
+            total = netTotal + netTaxTot;
+        } else {
+            total = subTotal + taxTotal;
+        }
 
-        if ((theDay === 2 || theDay === 3) && subTotal > 50) {
-            total = subTotal * discount + taxTotal;
-        } total = subTotal + taxTotal;
-        
-        
+
         let float = total.toFixed(2);
 
         // OUTPUT
@@ -44,12 +48,13 @@
 </script>
 
 <body>
-    <div class="header"></div>
-    <header>
-        <h1>Estin Reinsch</h1>
-        <hr>
-        <h2>Sales Discount</h2>
-    </header>
+    <div class="header">
+        <header>
+            <h1>Estin Reinsch</h1>
+            <hr>
+            <h2>Sales Discount</h2>
+        </header>
+    </div>
 
     <div class="main">
         <main>
