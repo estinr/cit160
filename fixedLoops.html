@@ -1,15 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cit160-fixLoops-ereinsch</title>
+    <link rel="stylesheet" href="css/fixedLoops.css">
 </head>
-<script>
-    
-</script>
+
+
 <body>
-    
+    <header>
+        <h1>Estin Reinsch</h1>
+        <hr>
+        <h2>fixed_Loops</h2>
+    </header>
+    <main>
+        <h3>Display 1:</h3>
+        <div id="display1"></div>
+        <hr>
+        <h3>Display 2:</h3>
+        <div id="display2"></div>
+        <hr>
+        <h3>Display 3:</h3>
+        <div id="display3"></div>
+        <hr>
+        <h3>Display 4:</h3>
+        <div id="display4"></div>
+    </main>
+    <script>
+        // PROCESSING
+        // QUESTION 1
+        let output1 = '';
+        let i = 0;
+        while (i < 2) {
+            output1 += `Part 1:${i}<br>`;
+            i++;
+        }
+        document.getElementById('display1').innerHTML = output1;
+
+        // QUESTION 2
+        var output2 = '';
+        for (let j = 0; j < 3; j++) {
+            if (j !== 2) {
+                output2 += `Part 2:${j}, `;
+            }
+            else {
+                output2 += `Part 2:${j}`;
+            }
+        }
+        document.getElementById('display2').textContent = output2;
+
+        // QUESTION 3
+        let output3 = '';
+        for (let k = 0; k < 4; k++) {
+            output3 += k + " ";
+        }
+        document.getElementById('display3').textContent = output3;
+
+        // QUESTION 4
+        let balance = 1000;
+        const rate = .10;
+        let n = 30;
+        for (let s = 0; s < n; s++) {
+            interest = balance * rate;
+            balance += interest;
+        }
+        document.getElementById('display4').textContent = balance.toFixed(2);
+
+    </script>
+
+    <footer>
+        &copy;2022 &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160
+    </footer>
 </body>
+
 </html>
