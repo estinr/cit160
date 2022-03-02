@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fiveTimes-ereinsch</title>
+</head>
+<style>
+    * {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #222;
+    }
+
+    body,
+    html {
+        max-width: 500px;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+
+    .main {
+        padding: inherit;
+        font-size: x-large;
+        box-shadow: 0 0 6px yellow;
+        border-radius: 50px;
+    }
+
+
+    .Ukrai {
+        height: 3px;
+        border: none;
+        background-color: blue;
+    }
+
+
+    .header,
+    .footer {
+        margin: 10px auto;
+        padding: inherit;
+        color: aqua;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <h1>Estin Reinsch</h1>
+        <hr class="Ukrai">
+        <h2>Five_Times</h2>
+    </div>
+
+    <!-- DISPLAY OUTPUT -->
+    <div class="main">
+        <span id="output"></span>
+    </div>
+
+    <div class="footer">
+        <span>&copy;2022 &bull; Estin Reinsch &bull; BYU-Idaho &bull; CIT 160</span>
+    </div>
+</body>
+
+<script>
+    // DECLARATIONS
+    const factor1 = 5;
+    let product = 0;
+    let display = '';
+    // let factor2 = 0; //for the "while" loop
+
+    // PROCESSING
+    for (let factor2 = 1; factor2 <= 12; factor2++) {
+        product = parseInt(factor1 * factor2);
+        display += `${factor1} X ${factor2} = ${product}<br>`;
+    }
+
+
+    // while (factor2 < 12) {
+    //     factor2++;
+    //     product = parseInt(factor1 * factor2); 
+    //     display += `${factor1} X ${factor2} = ${product}<br>`;
+    // }
+
+    // THE OUTPUT
+    document.getElementById('output').innerHTML = display;
+
+</script>
+
+</html>
