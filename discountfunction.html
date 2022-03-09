@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT160-discountfunct-ereinsch</title>
+</head>
+<style>
+    body {
+        max-width: fit-content;
+        background-color: #000077;
+        color: goldenrod;
+        margin: auto;
+        padding: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: x-large;
+        border-radius: 32px;
+        box-shadow: 0 0 18px white;
+    }
+
+    button {
+        padding: .5rem;
+        margin: auto;
+        align-content: center;
+        background-color: #444;
+        color: aqua;
+        font-weight: bold;
+        font-size: large;
+    }
+</style>
+
+<body>
+    <h1>Discount Function</h1>
+    <label for="subtotal">SubTot Amnt: <input type="text" id="subtotal"></label><br>
+    <label for="state">STATE:
+        <select name="state" id="state">Virginia (8%), Ohio (7%), Nevada (5%)
+            <option value="" selected disabled>Choose a State</option>
+            <option value=".08">Virginia</option>
+            <option value=".07">Ohio</option>
+            <option value=".05">Nevada</option>
+        </select>
+    </label> <br><br>
+        <button onclick="processTotal()">Process Total</button>
+        <div id="total"></div>
+</body>
+<script>
+    function processTotal() {
+        // DECLARATIONS
+        let total = 0;
+
+        // INPUT
+        let subtotal = parseFloat(document.getElementById('subtotal').value);
+        let statetax = parseFloat(document.getElementById('state').value);
+
+        // Check Day Discount
+        let discount = dayDiscount();
+        total = subtotal * (1 - discount);
+
+        // CHECK & DETERMINE DISCOUNT AMOUNT
+        let adiscount = amountDiscount(subtotal);
+        total = total - subtotal * adiscount;
+
+        // ADD TAX
+        total = total + total * statetax;
+        // OUTPUT
+        document.getElementById('total').innerHTML = `Total Amount Due: $${total.toFixed(2)}`;
+    }
+
+    function amountDiscount(st) {
+        let aDiscount = 0;
+        if (st > 100) {
+            aDiscount = .10;
+        }
+        return aDiscount;
+    }
+
+    function dayDiscount() {
+        let discount = 0;
+        let now = new Date();
+        let dayofweek = now.getDay();
+        switch (dayofweek) {
+            case 1:
+                discount = .10;
+                break;
+            case 2:
+                discount = .15;
+                break;
+            case 3:
+                discount = .20;
+                break;
+            case 4:
+                discount = .15;
+                break;
+            case 5:
+                discount = .05;
+                break;
+        }
+        return discount;
+    }
+</script>
+
+</html>

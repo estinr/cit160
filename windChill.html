@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cit160-windchill-ereinsch</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body,
+    html {
+        background-color: #222;
+        margin: auto;
+    }
+
+    button {
+        background-color: #111;
+        color: aqua;
+    }
+</style>
+
+<body>
+    <label for="tempF">Temperature: </label><input type="text" id="temp"><br>
+    <label for="windSpeed">Wind Speed: </label><input type="text" id="windSpeed"><br>
+    <button onclick="doInputOutput()">Wind Chill</button>
+    <hr>
+    <div id="output"></div>
+</body>
+<script>
+    function doInputOutput() {
+        // DECLARATIONS
+
+
+        // INPUT
+        let temperature = parseInt(document.getElementById('temp').value);
+        let windSpeed = parseInt(document.getElementById('windSpeed').value);
+
+
+        // PROCESSING
+        
+        // OUTPUT
+        // document.getElementById('output').textContent = ;
+    }
+    function windChill(temperature, windSpeed) {
+        let temp = doInputOutput(temperature);
+        let windSpd = doInputOutput(windSpeed);
+        // let mph = windSpd * 60;
+        let windChill = 35.74 + 0.6215 * temp - 35.75 * windSpd ** .16 + 0.4275 * temp * windSpd ** .16;
+
+        if (temperature >= 50 && windSpeed <= 3) {
+            return doInputOutput();
+        }
+    }
+</script>
+
+</html>

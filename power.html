@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam2-Q1:Power</title>
+</head>
+<style>
+    html {
+        max-width: 100px;
+        margin: auto;
+        background-color: #333;
+        color: aqua;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 700;
+        font-size: x-large;
+    }
+</style>
+
+<body>
+    <span id="output"></span>
+</body>
+
+<script>
+    let num1 = 2;
+    let display = '';
+    let exp = 0;
+
+    for (let exp = 0; exp <= 31; exp++) {
+        num1 += num1 ** exp;
+        if (exp == 31) {
+            display += `${num1}`;
+        } else {
+            display += `${num1},<br>`;
+        }
+    }
+    document.getElementById('output').innerHTML = display;
+</script>
+
+</html>
