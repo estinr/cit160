@@ -15,18 +15,28 @@
 
     body,
     html {
+        display: inline-block;
         background-color: #222;
         margin: auto;
+        padding: 10px;
+        line-height: 5ch;
+        color: white;
+        font-size: large;
+        font-family: sans-serif;
     }
 
     button {
         background-color: #111;
         color: aqua;
+        padding: inherit;
+        margin: 10px;
+        font-size: 2ch;
+        font-weight: bold;
     }
 </style>
 
 <body>
-    <label for="tempF">Temperature: </label><input type="text" id="temp"><br>
+    <label for="temp">Temperature: </label><input type="text" id="temp" autofocus="on"><br>
     <label for="windSpeed">Wind Speed: </label><input type="text" id="windSpeed"><br>
     <button onclick="doInputOutput()">Wind Chill</button>
     <hr>
@@ -34,28 +44,24 @@
 </body>
 <script>
     function doInputOutput() {
-        // DECLARATIONS
-
-
         // INPUT
         let temperature = parseInt(document.getElementById('temp').value);
-        let windSpeed = parseInt(document.getElementById('windSpeed').value);
+        let speed = parseInt(document.getElementById('windSpeed').value);
 
 
         // PROCESSING
-        
-        // OUTPUT
-        // document.getElementById('output').textContent = ;
-    }
-    function windChill(temperature, windSpeed) {
-        let temp = doInputOutput(temperature);
-        let windSpd = doInputOutput(windSpeed);
-        // let mph = windSpd * 60;
-        let windChill = 35.74 + 0.6215 * temp - 35.75 * windSpd ** .16 + 0.4275 * temp * windSpd ** .16;
-
-        if (temperature >= 50 && windSpeed <= 3) {
-            return doInputOutput();
+        if (temperature >= 50 || speed <= 3) {
+            return windChill();
         }
+
+        let windchill = windChill(temperature, speed);
+
+        // OUTPUT
+        document.getElementById('output').textContent = windchill;
+    }
+
+    function windChill(tempF, speed) {
+        return parseFloat(35.74 + 0.6215 * tempF - 35.75 * speed ** 0.16 + 0.4275 * tempF * speed ** 0.16).toFixed(2);
     }
 </script>
 

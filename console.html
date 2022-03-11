@@ -33,6 +33,56 @@
 </body>
 <script>
 
+function processTotal() {
+            //declarations
+            let total = 0;
+            // input
+            let subtotal = parseFloat(document.querySelector('#subtotal').value);
+            let statetax = parseFloat(document.querySelector('#state').value);
+            // determine if there is a day discount
+            let discount = dayDiscount();
+            total = subtotal * (1 - discount);
+            // determine if there is an amount discount
+            let adiscount = amountDiscount(subtotal);
+            total = total - subtotal * adiscount;
+            // add the tax
+            total = total + total * statetax;
+            // display total
+            document.getElementById('total').innerHTML = `Total Amount Due: $${total.tofixed(2)}`;
+        }
+
+        function amountDiscount(st) {
+            let aDiscount = 0
+            if (st > 100) {
+                aDiscount = .10;
+            }
+            return aDiscount;
+        }
+
+        function dayDiscount() {
+            let d = new Date();
+            let discount = 0;
+            let dayofweek = d.getday();
+            switch (dayofweek) {
+                case 1:
+                    discount = .10;
+                    break;
+                case 2:
+                    discount = .15;
+                    break;
+                case 3:
+                    discount = .20;
+                    break;
+                case 4:
+                    discount = .15;
+                    break;
+                case 5:
+                    discount = .05;
+                    break;
+            }
+            return discount;
+        }
+    
 </script>
 
 </html>
