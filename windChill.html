@@ -33,11 +33,15 @@
         font-size: 2ch;
         font-weight: bold;
     }
+
+    #output {
+        text-align: center;
+    }
 </style>
 
 <body>
-    <label for="temp">Temperature: </label><input type="text" id="temp" autofocus="on"><br>
-    <label for="windSpeed">Wind Speed: </label><input type="text" id="windSpeed"><br>
+    <label for="temp">Temperature: </label><input type="text" id="temp" autofocus="on"> F&deg;<br>
+    <label for="windSpeed">Wind Speed: </label><input type="text" id="windSpeed"> MPH<br>
     <button onclick="doInputOutput()">Wind Chill</button>
     <hr>
     <div id="output"></div>
@@ -57,7 +61,7 @@
         let windchill = windChill(temperature, speed);
 
         // OUTPUT
-        document.getElementById('output').textContent = windchill;
+        document.getElementById('output').innerHTML = `${windchill} F&deg; is your current windchill.`;
     }
 
     function windChill(tempF, speed) {
