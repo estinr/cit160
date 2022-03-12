@@ -54,9 +54,11 @@
 
 
         // PROCESSING
-        if (temperature >= 50 && speed <= 3) {
+        if (temperature <= 50 && speed >= 3) {
+        } else {
             return windChill();
         }
+
 
         windchill = windChill(temperature, speed);
 
