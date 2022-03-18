@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT160:Invest-ereinsch</title>
+</head>
+<style>
+    html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: midnightblue;
+        color: darkgoldenrod;
+        box-sizing: content-box;
+    }
+
+    body {
+        max-width: 400px;
+        margin: auto;
+        font-weight: bold;
+    }
+
+    .header {
+        text-align: center;
+        margin: 4px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label {
+        font-size: larger;
+        margin: 6px;
+        padding: 6px;
+    }
+
+    input {
+        display: list-item;
+        background-color: #bbb;
+        box-sizing: border-box;
+        padding: 6px;
+        margin: 4px;
+        border-radius: 8px;
+        font-size: large;
+    }
+
+    hr {
+        height: 3px;
+        border: none;
+        background-color: black;
+    }
+
+    button {
+        background-color: #333;
+        color: #AAA;
+        font-weight: 700;
+        padding: 16px;
+        font-size: large;
+        border-radius: 30px;
+        margin: 6px;
+    }
+
+    .output {
+        text-align: center;
+        font-size: larger;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <h1>Estin Reinsch</h1>
+        <h2>Investment Calculator</h2>
+    </div>
+    <div class="main">
+        <label for="principal">Principal: <input type="tel" id="principal"></label>
+        <label for="annualRate">Annual Rate: <input type="tel" id="annualRate"></label>
+        <label for="years">Years: <input type="tel" id="years"></label>
+        <label for="periods">Number of Periods: <input type="tel" id="periods"></label>
+        <button onclick="doFV()">Calculate</button>
+    </div>
+    <hr>
+    <div class="output"></div>
+</body>
+<script>
+    function doFV() {
+        // INPUT
+        let principal = parseInt(document.getElementById('principal').value);
+        let annualRate = parseFloat(document.getElementById('annualRate').value);
+        let years = parseInt(document.getElementById('years').value);
+        let periods = parseInt(document.getElementById('periods').value);
+
+        // PROCESSING
+        return computeFutureValue(principal);
+
+        output = computeFutureValue(); 
+
+        // HTML OUTPUT
+        document.getElementsByClassName('output').textContent = output;
+
+    }
+
+    function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+        // DECLARATIONS
+        
+        // PROCESSING
+        
+        // annualRate = parseFloat(annualRate / 12);
+        
+        // RETURN OUTPUT
+        return parseFloat(principal * (1 + annualRate) ** (years * periodsPerYear));
+        
+    }
+
+</script>
+
+</html>
