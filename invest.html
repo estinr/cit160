@@ -42,7 +42,7 @@
 
     input {
         display: list-item;
-        background-color: #bbb;
+        background-color: #BBB;
         box-sizing: border-box;
         padding: 6px;
         margin: 4px;
@@ -53,7 +53,7 @@
     hr {
         height: 3px;
         border: none;
-        background-color: black;
+        background-color: #BBB;
     }
 
     button {
@@ -66,7 +66,7 @@
         margin: 6px;
     }
 
-    .output {
+    #output {
         text-align: center;
         font-size: larger;
     }
@@ -85,7 +85,7 @@
         <button onclick="doFV()">Calculate</button>
     </div>
     <hr>
-    <div class="output"></div>
+    <div id="output"></div>
 
     <script>
         function doFV() {
@@ -96,24 +96,21 @@
             let periods = parseInt(document.getElementById('periods').value);
 
             // PROCESSING
-            return computeFutureValue(principal);
+            // return computeFutureValue(principal);
 
-            output = computeFutureValue();
+            let total = computeFutureValue(principal, annualRate, years, periods);
 
             // HTML OUTPUT
-            document.getElementsByClassName('output').textContent = output;
+            document.getElementById('output').textContent = total;
 
         }
 
         function computeFutureValue(principal, annualRate, years, periodsPerYear) {
-            // DECLARATIONS
-
             // PROCESSING
-
-            // annualRate = parseFloat(annualRate / 12);
+            annualRate = annualRate / periodsPerYear;
 
             // RETURN OUTPUT
-            return parseFloat(principal * (1 + annualRate) ** (years * periodsPerYear));
+            return parseFloat(principal * (1 + annualRate) ** (years * periodsPerYear)).toFixed(2);
 
         }
 
