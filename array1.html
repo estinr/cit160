@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT160-arrays-ereinsch</title>
+</head>
+<style>
+    html {
+        margin: 0;
+        padding: 0;
+        background-color: #222;
+        color: coral;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    button {
+        background-color: darkturquoise;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 20px;
+        margin: auto;
+        padding: 10px;
+    }
+
+    div {
+        padding-top: 20px;
+        margin: auto;
+        font-size: large;
+        font-weight: bold;
+        line-height: 3ch;
+    }
+</style>
+
+<body>
+    <main>
+        <button onclick="test()">Test</button>
+        <br>
+        <div id="output"></div>
+    </main>
+</body>
+
+<script>
+    /* Defining Table
+    Input: no user input */
+    // Processing: Test the addEnds and getMiddle functions by calling them.
+    function addEnds(arr) {
+
+        // Processing
+        let num1 = arr[arr.length - 1];
+        let num2 = arr[0];
+        let sum1 = num1 + num2;
+
+        // Output
+        return sum1;
+    }
+
+    // GET MIDDLE
+    function getMiddle(arr) {
+        let mid1 = 0;
+        let mid2 = 0;
+
+
+        if (arr.length % 2 === 0) {
+            let midIndex = Math.floor(arr.length / 2)
+            return Math.floor(arr[midIndex] + arr[midIndex - 1]) / 2;
+        } else {
+            let midIndex = Math.floor(arr.length / 2);
+            mid1 = arr[midIndex];
+            return mid1;
+        }
+        
+
+    }
+
+
+
+    //  Output: The values returned from the addEnds and getMiddle functions.
+    function test() {
+        let list1 = [17, 8, 9, 5, 20];
+        let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+        // Test the addEnds function by calling it two times.
+        let sum1 = addEnds(list1);
+        let sum2 = addEnds(list2);
+
+        // Test the getMiddle function by calling it two times.
+        let mid1 = getMiddle(list1);
+        let mid2 = getMiddle(list2);
+
+        // Build a string to display to the user.
+        let output =
+            `Sum 1: ${sum1}<br>
+            Sum 2: ${sum2}<br>
+            Middle 1: ${mid1}<br>
+            Middle 2: ${mid2}`;
+
+        // Display the output string for the user to see.
+        document.getElementById('output').innerHTML = output;
+    }
+</script>
+
+</html>
