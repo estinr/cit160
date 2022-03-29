@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cit160-array2-ereinsch</title>
+</head>
+<style>
+    html {
+        margin: 0;
+        padding: 0;
+        background-color: #055;
+        color: whitesmoke;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flexbox;
+        max-width: 350px;
+        text-align: center;
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    hr {
+        height: 3px;
+        border: none;
+        background-color: red;
+    }
+
+    button {
+        background-color: rgb(255, 10, 0);
+        font-size: large;
+        font-weight: bold;
+        border-radius: 30px;
+        margin: auto;
+        padding: 16px;
+    }
+
+    div {
+        padding-top: 20px;
+        margin: auto;
+        font-size: large;
+        font-weight: bold;
+        line-height: 3ch;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Estin Reinsch</h1>
+        <hr>
+        <h2>Arrays 2</h2>
+    </header>
+    <button onclick="test()">Big Red Button</button>
+    <div id="output"></div>
+    <script>
+        /* Defining Table
+     * Input: no user input
+     * Processing: Test the countEvens and multiply functions by calling them.
+     * Output: The values returned from the countEvens and multiply functions.
+     */
+
+        function countEvens(array) {
+            return array.filter(Element => (Element % 2 === 0));
+        }
+
+
+        function multiply(list1,list2) {
+            return list1.map(Element => (Element * 3));
+            return list2.map(Element => (Element * 2));
+        }
+
+
+
+        function test() {
+            let list1 = [17, 8, 9, 5, 20];
+            let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+
+            // Test the countEvens function by calling it two times.
+            let count1 = countEvens(list1);
+            let count2 = countEvens(list2);
+
+
+            // Test the multiply function by calling it two times.
+            let mult1 = multiply(list1, 3);
+            let mult2 = multiply(list2, 4);
+
+            // Build a string to display to the user.
+            let output =
+                'Even 1: ' + count1 + '<br>' +
+                'Even 2: ' + count2 + '<br>' +
+                'Multiplier 1: ' + mult1 + '<br>' +
+                'Multiplier 2: ' + mult2;
+
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>
