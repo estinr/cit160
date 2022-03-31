@@ -64,13 +64,12 @@
      */
 
         function countEvens(array) {
-            return array.filter(Element => (Element % 2 === 0));
+            return array.filter(Element => (Element % 2 === 0)).length;
         }
 
 
-        function multiply(list1,list2) {
-            return list1.map(Element => (Element * 3));
-            return list2.map(Element => (Element * 2));
+        function multiply(list, x) {
+            return list.map(Element => (Element) * x);
         }
 
 
@@ -87,7 +86,7 @@
 
             // Test the multiply function by calling it two times.
             let mult1 = multiply(list1, 3);
-            let mult2 = multiply(list2, 4);
+            let mult2 = multiply(list2, 2);
 
             // Build a string to display to the user.
             let output =
