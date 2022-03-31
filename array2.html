@@ -17,11 +17,15 @@
     }
 
     body {
-        display: flexbox;
-        max-width: 350px;
         text-align: center;
         margin: 10px auto;
         padding: 20px;
+    }
+
+    header {
+        margin: auto;
+        padding: inherit;
+        max-width: 350px;
     }
 
     hr {
@@ -31,7 +35,8 @@
     }
 
     button {
-        background-color: rgb(255, 10, 0);
+        background-color: rgb(255, 0, 0);
+        color: white;
         font-size: large;
         font-weight: bold;
         border-radius: 30px;
@@ -40,11 +45,22 @@
     }
 
     div {
+        max-width: fit-content;
         padding-top: 20px;
         margin: auto;
         font-size: large;
         font-weight: bold;
         line-height: 3ch;
+    }
+    
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        float:inline-start;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 </style>
 
@@ -91,9 +107,10 @@
             // Build a string to display to the user.
             let output =
                 'Even 1: ' + count1 + '<br>' +
-                'Even 2: ' + count2 + '<br>' +
-                'Multiplier 1: ' + mult1 + '<br>' +
-                'Multiplier 2: ' + mult2;
+                'Even 2: ' + count2 + '<br>' + '<hr>' + '<ol>' + 
+                '<li>Multiplier x3: ' + mult1 + '<br>' +
+                '<li>Multiplier x2: ' + mult2 + '</ol>'; 
+
 
             // Display the output string for the user to see.
             document.getElementById('output').innerHTML = output;
